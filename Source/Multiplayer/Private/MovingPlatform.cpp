@@ -16,7 +16,7 @@ void AMovingPlatform::Tick(float DeltaTime)
 
 	if (HasAuthority()) //is on the server
 	{
-		UE_LOG(LogTemp, Warning, TEXT("it is moving cause authority"));
+		//UE_LOG(LogTemp, Warning, TEXT("it is moving cause authority"));
 		FVector ActorLoc = GetActorLocation();
 		float JourneyLength = (GlobalTargetLocation - StartLocation).Size();
 		float JourneyTraveled = (ActorLoc - StartLocation).Size();
