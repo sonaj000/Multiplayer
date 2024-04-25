@@ -9,6 +9,8 @@
 /**
  * 
  */
+class UUserWidget;
+
 UCLASS()
 class MULTIPLAYER_API UMPGameInstance : public UGameInstance
 {
@@ -19,10 +21,16 @@ public:
 
 	virtual void Init();
 
+	UFUNCTION(Exec, BlueprintCallable) //allows call from cmd
+	void LoadMenu();
+
 	UFUNCTION(Exec) //allows call from cmd
 	void Host();
 
 	UFUNCTION(Exec)
 	void Join(const FString &Address);
 
+private:
+	UPROPERTY()
+	TSubclassOf<UUserWidget>MenuClass;
 };
